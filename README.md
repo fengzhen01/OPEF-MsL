@@ -1,6 +1,4 @@
 # OPEF-MsL：Interpretable protein–small molecule binding site prediction via optimal PLM embedding fusion and multi-scale learning
-## Introduction
-
 **OPEF-MsL** (Optimal PLM Embedding Fusion with Multi-scale Learning) is a framework for protein–small molecule binding site prediction that integrates state-of-the-art protein language models (PLMs) with graph neural networks and handcrafted features in a principled, multi-scale manner. 
 
 OPEF-MsL leverages two large-scale pre-trained PLMs—**Ankh** and **ProstT5**—to generate informative residue-level embeddings. These embeddings are processed using PyTorch and the Hugging Face `transformers` library to extract rich protein representations.  
