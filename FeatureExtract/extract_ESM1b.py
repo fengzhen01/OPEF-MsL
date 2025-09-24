@@ -51,8 +51,8 @@ if __name__ == "__main__":
 
     print('----Preparing dataset------')
 
-    trainfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SJC/SMB1_Train.txt']
-    testfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SJC/SMB1_Test.txt']
+    trainfiles1 = ['D:/fengzhen/OPEF-MsL-main/DataSet/SJC/SMB1_Train.txt']
+    testfiles1 = ['D:/fengzhen/OPEF-MsL-main/DataSet/SJC/SMB1_Test.txt']
 
     for item in trainfiles1:
         print(item)
