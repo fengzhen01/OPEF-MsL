@@ -26,6 +26,14 @@ The required Python dependencies are listed below:
 - **datasets**: 2.21.0
 - **numpy / scipy**: 2.2.4 / 1.15.2
 
+## 2. How to use
+Extract PLM embeddings:  
+cd to the `OPEF-MsL/FeatureExtract` directory.  
+Run `python3 extract_ankh.py` to generate residue-level embeddings from the **Ankh** model, which will be saved to the `embedding/ankh_embedding` folder.  
+Run `python3 extract_prostt5.py` to generate residue-level embeddings from the **ProstT5** model, which will be saved to the `embedding/prostt5_embedding` folder.
+
+
+
 ## Installation
 ### Usage
 1. Prepare input protein sequences in FASTA format.
