@@ -30,7 +30,7 @@ The required Python dependencies are listed below:
 Extract PLM embeddings:  
 cd to the `OPEF-MsL/FeatureExtract` directory.  
 Run `python3 extract_ankh.py` to generate residue-level embeddings from the **Ankh** model, which will be saved to the `embedding/ankh_embedding` folder.  
-Run `python3 extract_prostt5.py` to generate residue-level embeddings from the **ProstT5** model, which will be saved to the `embedding/prostt5_embedding` folder.
+Run `python3 extract_prostT5.py` to generate residue-level embeddings from the **ProstT5** model, which will be saved to the `embedding/prostt5_embedding` folder.
 
 
 
