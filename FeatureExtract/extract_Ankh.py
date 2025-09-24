@@ -48,15 +48,15 @@ def extract_ankh_embeddings(file, dest_folder, model, tokenizer, device):
 if __name__ == "__main__":
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
-    local_model_path = "D:/fengzhen/1NucGMTL-main/Ankh/Ankh_Large/"
+    local_model_path = "D:/fengzhen/OPEF-MsL-main/Ankh/Ankh_Large/"
     print("Loading Ankh-Large model from local...")
     tokenizer = AutoTokenizer.from_pretrained(local_model_path)
     model = T5EncoderModel.from_pretrained(local_model_path).to(device)
     model.eval()
 
     input_files = [
-        'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Train.txt',
-        'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Test.txt'
+        'D:/fengzhen/OPEF-MsL-main/DataSet/UniProtSMB/SMB2_Train.txt',
+        'D:/fengzhen/OPEF-MsL-main/DataSet/UniProtSMB/SMB2_Test.txt'
     ]
     output_dir = 'D:/fengzhen/2embedding/Ankh_embedding/'
     os.makedirs(output_dir, exist_ok=True)
