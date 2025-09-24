@@ -90,14 +90,14 @@ def extratdata(file,destfolder):
         #model.to('cpu')
 
 if __name__ == "__main__":
-    tokenizer = T5Tokenizer.from_pretrained("D:/fengzhen/1NucGMTL-main/prot_t5_xl_uniref50", do_lower_case=False)
-    model = T5EncoderModel.from_pretrained("D:/fengzhen/1NucGMTL-main/prot_t5_xl_uniref50")
+    tokenizer = T5Tokenizer.from_pretrained("D:/fengzhen/OPEF-MsL-main/prot_t5_xl_uniref50", do_lower_case=False)
+    model = T5EncoderModel.from_pretrained("D:/fengzhen/OPEF-MsL-main/prot_t5_xl_uniref50")
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     model = model.to(device)
     model = model.eval()
 
-    trainfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Train.txt']
-    testfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Test.txt']
+    trainfiles1 = ['D:/fengzhen/OPEF-MsL-main/DataSet/SMB/SMB_Train.txt']
+    testfiles1 = ['D:/fengzhen/OPEF-MsL-main/DataSet/SMB/SMB_Test.txt']
     for item in trainfiles1:
         print (item)
         extratdata(item, 'D:/fengzhen/1embedding/protT5_embedding_SMB/')
