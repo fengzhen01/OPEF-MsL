@@ -44,10 +44,10 @@ cd path/to/OPEF-MsL
 python3 main.py
 ```
 
+## 4. Prediction / Inference
 
-## Installation
-### Usage
-1. Prepare input protein sequences in FASTA format.
-2. Run the prediction script:
-   ```bash
-   python run_opef_msl.py --input input.fasta --output results/
+To perform inference using a trained OPEF-MsL model, run the prediction script `OPEF-MsL_Prediction.py` from the project root directory:
+
+```bash
+python3 OPEF-MsL_Prediction.py
+```
