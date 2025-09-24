@@ -7,8 +7,6 @@ import gc
 import os
 import pandas as pd
 
-
-# Read protein sequences from a file, for triplet format
 def read_data_file_trip(filename):
     f = open(filename)
     data = f.readlines()
@@ -29,8 +27,6 @@ def read_data_file_trip(filename):
         results.append(item)
     return results
 
-
-# Read protein sequences from a fasta file
 def read_data_file_trip_from_fasta(filename):
     f = open(filename)
     data = f.readlines()
@@ -47,8 +43,6 @@ def read_data_file_trip_from_fasta(filename):
         results.append(item)
     return results
 
-
-# Extract embeddings for proteins and save
 def extratdata(file, destfolder, tokenizer, model, device):
     student_tuples = read_data_file_trip(file)
     i = 1
@@ -60,16 +54,13 @@ def extratdata(file, destfolder, tokenizer, model, device):
         with open(os.path.join(destfolder, name + '.label'), 'w') as f:
             f.write(','.join(l for l in label))
 
-        # Replacing special characters with 'X' as in original code
         newseq = ' '.join(s for s in seq)
         newseq = re.sub(r"[UZOB]", "X", newseq)
 
-        # Tokenize input sequence
         ids = tokenizer.batch_encode_plus([newseq], add_special_tokens=True, padding=True, return_tensors="pt")
         input_ids = ids['input_ids'].to(device)
         attention_mask = ids['attention_mask'].to(device)
 
-        # Extract embedding with model
         with torch.no_grad():
             embedding = model(input_ids=input_ids, attention_mask=attention_mask)
 
@@ -83,7 +74,6 @@ def extratdata(file, destfolder, tokenizer, model, device):
             with open(os.path.join(destfolder, name + '.data'), 'w') as f:
                 np.savetxt(f, seq_emd, delimiter=',', fmt='%s')
 
-        # Clean up GPU memory
         torch.cuda.empty_cache()
 
 
@@ -97,11 +87,9 @@ if __name__ == "__main__":
     model = model.to(device)
     model = model.eval()
 
-    # Files for training and testing
     trainfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Train.txt']
     testfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Test.txt']
 
-    # Extract embeddings for training and test datasets
     for item in trainfiles1:
         print(item)
         extratdata(item, 'D:/fengzhen/1embedding/protbert_embedding_SMB/', tokenizer, model, device)
