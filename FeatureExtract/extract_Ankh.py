@@ -47,31 +47,22 @@ def extract_ankh_embeddings(file, dest_folder, model, tokenizer, device):
 
 if __name__ == "__main__":
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
-    # ankh_model_name = "facebook/ankh-large"  # 或 "facebook/ankh-base"
-    # print("加载 Ankh 模型和 tokenizer...")
-    # tokenizer = AutoTokenizer.from_pretrained(ankh_model_name)
-    # model = AutoModel.from_pretrained(ankh_model_name).to(device)
-    # model.eval()
 
     local_model_path = "D:/fengzhen/1NucGMTL-main/Ankh/Ankh_Large/"
-    print("从本地加载 Ankh-Large 模型...")
+    print("Loading Ankh-Large model from local...")
     tokenizer = AutoTokenizer.from_pretrained(local_model_path)
     model = T5EncoderModel.from_pretrained(local_model_path).to(device)
     model.eval()
 
-    # input_files = [
-    #     'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Train.txt',
-    #     'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Test.txt'
-    # ]
     input_files = [
-        'D:/fengzhen/1NucGMTL-main/DataSet/ATP/ATP549.txt',
-        'D:/fengzhen/1NucGMTL-main/DataSet/ATP/ATP41.txt'
+        'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Train.txt',
+        'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Test.txt'
     ]
-    output_dir = 'D:/fengzhen/2embedding/Ankh_embedding_ATP549+41/'
+    output_dir = 'D:/fengzhen/2embedding/Ankh_embedding/'
     os.makedirs(output_dir, exist_ok=True)
 
     for file in input_files:
-        print(f"\n=== 开始处理文件: {file} ===")
+        print(f"\n=== Processing file: {file} ===")
         extract_ankh_embeddings(file, output_dir, model, tokenizer, device)
 
-    print("\n==== 全部完成 ====")
+    print("\n==== All files processed successfully ====")
