@@ -38,7 +38,8 @@ Run `python3 extract_prostT5.py` to generate residue-level embeddings from the *
 
 ```bash
 cd path/to/OPEF-MsL
-Run the following command to train and test the model on all protein–small molecule binding residue datasets (SMB, SJC, and UniProtSMB):
+
+2. Run the following command to train and test the model on all protein–small molecule binding residue datasets (SMB, SJC, and UniProtSMB):
 python3 main.py
 
 
