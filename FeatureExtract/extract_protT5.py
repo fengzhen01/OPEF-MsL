@@ -93,23 +93,17 @@ if __name__ == "__main__":
     tokenizer = T5Tokenizer.from_pretrained("D:/fengzhen/1NucGMTL-main/prot_t5_xl_uniref50", do_lower_case=False)
     model = T5EncoderModel.from_pretrained("D:/fengzhen/1NucGMTL-main/prot_t5_xl_uniref50")
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-    # device = 'cuda:1'
     model = model.to(device)
     model = model.eval()
 
-    # trainfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Train.txt']
-    trainfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/ATP/ATP549.txt']
-
-    # testfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Test.txt']
-    testfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/ATP/ATP41.txt']
+    trainfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Train.txt']
+    testfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Test.txt']
     for item in trainfiles1:
         print (item)
-        # extratdata(item, 'D:/fengzhen/1embedding/protT5_embedding_SMB/')
-        extratdata(item, 'D:/fengzhen/2embedding/ProtT5_embedding_ATP549+41/')
+        extratdata(item, 'D:/fengzhen/1embedding/protT5_embedding_SMB/')
 
     for item in testfiles1:
         print(item)
-        # extratdata(item, 'D:/fengzhen/1embedding/protT5_embedding_SMB/')
-        extratdata(item, 'D:/fengzhen/2embedding/ProtT5_embedding_ATP549+41/')
+        extratdata(item, 'D:/fengzhen/1embedding/protT5_embedding_SMB/')
 
     print('----finish-------')
