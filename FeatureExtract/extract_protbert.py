@@ -87,8 +87,8 @@ if __name__ == "__main__":
     model = model.to(device)
     model = model.eval()
 
-    trainfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Train.txt']
-    testfiles1 = ['D:/fengzhen/1NucGMTL-main/DataSet/SMB/SMB_Test.txt']
+    trainfiles1 = ['D:/fengzhen/OPEF-MsL-main/DataSet/SMB/SMB_Train.txt']
+    testfiles1 = ['D:/fengzhen/OPEF-MsL-main/DataSet/SMB/SMB_Test.txt']
 
     for item in trainfiles1:
         print(item)
