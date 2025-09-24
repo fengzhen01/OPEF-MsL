@@ -5,7 +5,6 @@ from sklearn import metrics
 from torch.utils.data import DataLoader
 import torch.multiprocessing
 import datetime
-
 from focalLoss import FocalLoss
 from model import Module
 from data_loader import read_data_file_trip, BioinformaticsDataset, coll_paddding
@@ -166,6 +165,6 @@ if __name__ == "__main__":
 
     with open('RSMB/Result_' + storename + '_' + a + '.txt', 'w') as f:
         for nuc in tasks:
-            np.savetxt(f, totalkv[nuc], delimiter=',', footer='Above is  record ' + nuc, fmt='%s')
+            np.savetxt(f, totalkv[nuc], delimiter=',', footer='Above is  record ' + SMB, fmt='%s')
             m = np.mean(totalkv[nuc], axis=0)
-            np.savetxt(f, [m], delimiter=',', footer='----------Above is AVG -------' + nuc, fmt='%s')
+            np.savetxt(f, [m], delimiter=',', footer='----------Above is AVG -------' + SMB, fmt='%s')
