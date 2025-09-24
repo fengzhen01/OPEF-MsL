@@ -26,13 +26,24 @@ The required Python dependencies are listed below:
 - **datasets**: 2.21.0
 - **numpy / scipy**: 2.2.4 / 1.15.2
 
-## 2. How to use
-Extract PLM embeddings:  
+## 2. Datasets
+
+OPEF-MsL uses three benchmark datasets for protein–small molecule binding residue prediction:
+
+- **SMB**: A curated dataset of protein–small molecule binding sites.  
+- **SJC**: A dataset collected from [source/reference].  
+- **UniProtSMB**: Binding site annotations derived from UniProt entries.  
+
+All datasets are preprocessed into residue-level formats suitable for embedding extraction and model training. Users can also apply the same preprocessing steps to their own protein sequences.
+
+
+## 3. How to use
+#### 1.Extract PLM embeddings:  
 cd to the `OPEF-MsL/FeatureExtract` directory.  
 Run `python3 extract_ankh.py` to generate residue-level embeddings from the **Ankh** model, which will be saved to the `embedding/ankh_embedding` folder.  
 Run `python3 extract_prostT5.py` to generate residue-level embeddings from the **ProstT5** model, which will be saved to the `embedding/prostt5_embedding` folder.
 
-## 3. Train and Test
+#### 2. Train and Test
 
 1. Navigate to the OPEF-MsL project root directory:
 
@@ -44,7 +55,7 @@ cd path/to/OPEF-MsL
 python3 main.py
 ```
 
-## 4. Prediction / Inference
+#### 3. Prediction / Inference
 
 To perform inference using a trained OPEF-MsL model, run the prediction script `OPEF-MsL_Prediction.py` from the project root directory:
 
