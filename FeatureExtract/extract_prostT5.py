@@ -98,9 +98,9 @@ if __name__ == "__main__":
     ]
 
     if missing_files:
-        raise FileNotFoundError(f"缺少必要的模型文件: {missing_files}")
+        raise FileNotFoundError(f"Required model file(s) missing: {missing_files}")
 
-    print(f"从本地加载ProstT5模型: {local_model_path}")
+    print(f"Loading ProstT5 model from local path: {local_model_path}")
     tokenizer = T5Tokenizer.from_pretrained(
         local_model_path,
         do_lower_case=False
@@ -109,16 +109,12 @@ if __name__ == "__main__":
     model = model.to(device)
     model.eval()
 
-    # input_files = [
-    #     'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Train.txt',
-    #     'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Test.txt'
-    # ]
     input_files = [
-        'D:/fengzhen/1NucGMTL-main/DataSet/ATP/ATP549.txt',
-        'D:/fengzhen/1NucGMTL-main/DataSet/ATP/ATP41.txt'
+        'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Train.txt',
+        'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Test.txt'
     ]
-    # output_dir = 'D:/xiangmu/3embedding/prostT5_embedding_SMB2/'
-    output_dir = 'D:/fengzhen/2embedding/ProstT5_embedding_ATP549+41/'
+
+    output_dir = 'D:/xiangmu/3embedding/prostT5_embedding_SMB2/'
     os.makedirs(output_dir, exist_ok=True)
 
     for file in input_files:
