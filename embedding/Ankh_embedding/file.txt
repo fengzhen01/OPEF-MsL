@@ -1,1 +1,5 @@
-Ankh_embedding
+# This folder contains residue-level embeddings generated from the Ankh protein language model.
+# Each file corresponds to a protein sequence in the dataset.
+# The embeddings are stored in binary format (e.g., .npy or .pt) for efficient loading.
+# These embeddings are used as input features for the OPEF-MsL framework.
+# Due to large file size, the actual embedding matrices are not included in this text file.
