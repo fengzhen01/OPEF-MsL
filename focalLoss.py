@@ -3,11 +3,11 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-#used
-class FocalLoss_v2(nn.Module):
+
+class FocalLoss(nn.Module):
     def __init__(self, num_class=2, gamma=2, alpha=None):
 
-        super(FocalLoss_v2, self).__init__()
+        super(FocalLoss, self).__init__()
         self.gamma = gamma
         self.num_class = num_class
         if alpha == None:
@@ -26,3 +26,4 @@ class FocalLoss_v2(nn.Module):
         focal_loss = -(alpha * (1 - pt) ** self.gamma) * logpt
 
         return focal_loss.mean()
+
