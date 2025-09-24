@@ -4,7 +4,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 
 def read_data_file_trip(istraining):
-    """读取SMB数据文件"""
+    """Read SMB data files"""
     if istraining:
         file_path = 'D:/fengzhen/OPEF-MsL-main/DataSet/SMB/SMB_Train.txt'
     else:
