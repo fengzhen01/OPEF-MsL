@@ -3,20 +3,24 @@ OPEF-MsL: Interpretable protein–small molecule binding site prediction via opt
 ## Introduction
 OPEF-MsL is a novel framework that integrates Optimal Protein Language Model (PLM) Embedding Fusion with Multi-scale Learning for protein–small molecule binding site prediction.
 ## 1. System Requirements
-The source code was developed in **Python 3.9** using **PyTorch 2.5.1**.  
+
+The source code was developed in **Python 3.10** using **PyTorch 2.6.0** with CUDA 11.8 support.  
 The required Python dependencies are listed below:
-- **Python**: 3.9+
-- **PyTorch**: 2.5.1
-- **Torchvision**: 0.20.1
-- **Torchaudio**: 2.5.1
+
+- **Python**: 3.10
+- **PyTorch**: 2.6.0+cu118
+- **Torchvision**: *(match PyTorch version if needed)*
+- **Torchaudio**: 2.6.0+cu118
 - **CUDA**: 11.8 (recommended)
-- **Transformers**: 4.46.3
-- **SentencePiece**: 0.2.0
+- **Transformers**: *(match your project, e.g., 4.46.x)*
+- **SentencePiece**: 0.1.99
 - **fair-esm**: 2.0.0
-- **scikit-learn**: 1.5.2
+- **scikit-learn**: 1.6.1
 - **pandas**: 2.2.3
-- **matplotlib**: 3.9.4
-- **pytorch-lightning**: 1.9.5
+- **matplotlib**: 3.10.5
+- **shap**: 0.48.0
+- **datasets**: 2.21.0
+- **numpy / scipy**: 2.2.4 / 1.15.2
 
 ## Installation
 ### Usage
