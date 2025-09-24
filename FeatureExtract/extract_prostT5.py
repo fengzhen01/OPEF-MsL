@@ -81,7 +81,7 @@ def extract_prostt5_embeddings(file, dest_folder):
 
 
 if __name__ == "__main__":
-    local_model_path = "D:/fengzhen/1NucGMTL-main/ProstT5"
+    local_model_path = "D:/fengzhen/OPEF-MsL-main/ProstT5"
     device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
     required_files = [
@@ -110,8 +110,8 @@ if __name__ == "__main__":
     model.eval()
 
     input_files = [
-        'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Train.txt',
-        'D:/fengzhen/1NucGMTL-main/DataSet/UniProtSMB/SMB2_Test.txt'
+        'D:/fengzhen/OPEF-MsL-main/DataSet/UniProtSMB/SMB2_Train.txt',
+        'D:/fengzhen/OPEF-MsL-main/DataSet/UniProtSMB/SMB2_Test.txt'
     ]
 
     output_dir = 'D:/xiangmu/3embedding/prostT5_embedding_SMB2/'
