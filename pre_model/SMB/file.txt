@@ -1,0 +1,16 @@
+# Pre-trained Model Files for SMB Dataset
+
+This folder is intended to store the trained model checkpoint files (.pkl) for the SMB dataset.  
+The expected files are:
+
+- Result_SMB_0_YYYY-MM-DD_HH_MM_SS.pkl  
+- Result_SMB_1_YYYY-MM-DD_HH_MM_SS.pkl  
+- Result_SMB_2_YYYY-MM-DD_HH_MM_SS.pkl  
+- Result_SMB_3_YYYY-MM-DD_HH_MM_SS.pkl  
+- Result_SMB_4_YYYY-MM-DD_HH_MM_SS.pkl  
+
+These `.pkl` files are not included in this repository due to their large size.  
+Please train the model yourself to generate them:
+
+```bash
+python3 main.py
