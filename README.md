@@ -55,8 +55,8 @@ python3 main.py
 ```
 
 #### 3. Prediction / Inference
-To perform inference using a trained OPEF-MsL model, run the prediction script `OPEF-MsL_Prediction.py` from the project root directory:
+To perform inference using a trained OPEF-MsL model, run the prediction script `Prediction.py` from the project root directory:
 
 ```bash
-python3 OPEF-MsL_Prediction.py
+python3 Prediction.py
 ```
